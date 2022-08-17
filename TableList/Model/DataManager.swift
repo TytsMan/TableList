@@ -56,9 +56,6 @@ class DataManager {
         "YG - Stop Snitching",
     ]
     
-    
-    
-    #warning("Home task")
     var movieTitles = [
         "12 Angry Men",
         "Pulp Fiction",
@@ -124,4 +121,21 @@ class DataManager {
         "https://www.youtube.com/embed/r5X-hFf6Bwo",
         "https://www.youtube.com/embed/6hB3S9bIaco"
     ]
+    
+    func createMovies() -> [Movie] {
+        var result = Array<Movie>()
+        result.reserveCapacity(movieTitles.count)
+        for idx in 0..<movieTitles.count {
+            let movie = Movie(
+                title: movieTitles[idx],
+                cover: imageNames[idx],
+                genre: movieGenres[idx],
+                releaseYear: releaseYears[idx],
+                desctription: descriptions[idx],
+                trailerUrl: movieTrailerUrls[idx]
+            )
+            result.append(movie)
+        }
+        return result
+    }
 }

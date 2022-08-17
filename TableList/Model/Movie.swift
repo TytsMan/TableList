@@ -7,4 +7,12 @@
 
 import Foundation
 
-#warning("struct Movie")
+struct Movie {
+    let title: String
+    let cover: String
+    let genre: String
+    let releaseYear: Int
+    let desctription: String
+    let trailerUrl: String
+}
+                
